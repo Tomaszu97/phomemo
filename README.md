@@ -28,22 +28,23 @@ Enter into webserver directory:
 Now web server can be directly started by running:  
 `python webserver.py`  
 It should be available on your machine on port 8081.  
-
 To make it run at startup, assuming you use systemd, first create a file, for example:  
 `/etc/systemd/system/phomemo.service`  
-Example file content is shown below (service using pyenv):  
 ```
 [Unit]
 Description=phomemo
 
 [Service]
-ExecStart=/home/user/git/m110/venv/bin/python /home/user/git/m110/webserver/webserver.py
+ExecStart=/home/user/git/phomemo/venv/bin/python /home/user/git/phomemo/webserver/webserver.py
 Restart=always
 User=user
 Group=user
-WorkingDirectory=/home/user/git/m110/webserver/
+WorkingDirectory=/home/user/git/phomemo/webserver/
 
 [Install]
 WantedBy=multi-user.target
 ```
-
+Then run:  
+`systemctl daemon-reload`  
+`systemctl enable phomemo`  
+`systemctl start phomemo`  
