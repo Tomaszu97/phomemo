@@ -48,3 +48,8 @@ Then run:
 `systemctl daemon-reload`  
 `systemctl enable phomemo`  
 `systemctl start phomemo`  
+
+And finally, make sure that bluetooth and a printer is powered on and the bluetooth device is visible, otherwise you will receive server error.  
+If you forgot, just turn on the printer and click F5 -> resend form. It should start printing then.  
+This project is just a crude example, but good enough for quick label printing.  
+Also, I do not encourage port forwarding this web server to the internet.  
